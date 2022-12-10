@@ -1,222 +1,109 @@
-<!doctype html>
-<html lang="en">
-
+<!DOCTYPE html>
+<html>
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-  <title>CHECK IN</title>
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-  <style>
-    .navbar {
-      margin-bottom: 0;
-      border-radius: 0;
-    }
-    .row.content {
-      height: 863px;
-    }
-    .sidenav {
-      padding-top: 10px;
-      background-color: #4c95da;
-      height: 100%;
-    }
-    footer {
-      background-color: rgb(85, 85, 85);
-      color: white;
-      padding: 8px;
-    }
-    @media screen and (max-width: 767px) {
-      .sidenav {
-        height: auto;
-        padding: 30px;
-      }
-      .row.content {
-        height: auto;
-      }
-    }
-    .sidebar {
-      height: 100%;
-      width: 0;
-      position: fixed;
-      z-index: 1;
-      top: 0;
-      left: 0;
-      background-color: #111;
-      overflow-x: hidden;
-      transition: 0.5s;
-      padding-top: 60px;
-    }
-    .sidebar a {
-      padding: 8px 8px 8px 32px;
-      text-decoration: none;
-      font-size: 20px;
-      color: #ffffff;
-      display: block;
-      transition: 0.3s;
-    }
-    .sidebar a:hover {
-      color: #f1f1f1;
-    }
-    .sidebar .closebtn {
-      position: absolute;
-      top: 0;
-      right: 25px;
-      font-size: 36px;
-      margin-left: 50px;
-    }
-    .openbtn {
-      font-size: 20px;
-      cursor: pointer;
-      background-color: #111;
-      color: white;
-      padding: 10px 15px;
-      border: none;
-    }
-    .openbtn:hover {
-      background-color: #444;
-    }
-    .sidenav a,
-    .dropdown-btn {
-      padding: 6px 8px 6px 16px;
-      text-decoration: none;
-      font-size: 20px;
-      color: #ffffff;
-      display: block;
-      border: none;
-      background: none;
-      width: 100%;
-      text-align: left;
-      cursor: pointer;
-      outline: none;
-    }
-   
-    .sidenav a:hover,
-    .dropdown-btn:hover {
-      color: #f1f1f1;
-    }
-    
-    .main {
-      margin-left: 200px;
-      
-      font-size: 20px;
-     
-      padding: 0px 10px;
-    }
-    
-    .active {
-      background-color: rgb(113, 117, 113);
-      color: white;
-    }
-    
-    .dropdown-container {
-      display: none;
-      background-color: #262626;
-      padding-left: 8px;
-    }
-    
-    .fa-caret-down {
-      float: right;
-      padding-right: 8px;
-    }
-    #main {
-      transition: margin-left 0.5s;
-      padding: 16px;
-    }
-    
-    @media screen and (max-height: 450px) {
-      .sidebar {
-        padding-top: 15px;
-      }
-      .sidebar a {
-        font-size: 18px;
-      }
-    }
-  </style>
+<title>Hotel</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<style>
+body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", Arial, Helvetica, sans-serif}
+</style>
 </head>
-<body>
-  <!-- Hambergure -->
-  <nav class="navbar navbar-inverse">
-    <div class="container-fluid">
-      <div class="navbar-header">
-        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
-        <button class="openbtn" onclick="openNav()">&nbsp;&nbsp;☰&nbsp;&nbsp; </button>
-      </div>
-      <div class="collapse navbar-collapse" id="myNavbar">
-        <ul class="nav navbar-nav">
-          <a class="navbar-brand" href="../UI_main.html">&nbsp;&nbsp;HOTEL</a>
-          <li><a href="#">History</a></li>
-          <li><a href="#">About</a></li>
-          <li><a href="#">Contact</a></li>
-        </ul>
-        <ul class="nav navbar-nav navbar-right">
-          <li>
-            <a href="#"><span class="glyphicon glyphicon-log-in"></span> Logout</a>
-          </li>
-      </div>
+<body class="w3-light-grey">
+
+<!-- Navigation Bar -->
+<div class="w3-bar w3-white w3-large">
+  
+  <a href="#refresh" class="w3-bar-item w3-button w3-blue-gray w3-mobile"><i class="fa fa-bed w3-margin-right"></i>Hotel Inside Management</a>
+  <!--<a href="#rooms" class="w3-bar-item w3-button w3-mobile">Check In</a>
+  <a href="#about" class="w3-bar-item w3-button w3-mobile">About</a>
+  <a href="#contact" class="w3-bar-item w3-button w3-mobile">Contact</a> -->
+  <a href="#contact" class="w3-bar-item w3-button w3-right w3-blue-gray w3-mobile">LogOut</a></a>
+  <a href="#contact" class="w3-bar-item w3-button w3-right w3-white w3-mobile"></a></a>
+  <a href="#contact" class="w3-bar-item w3-button w3-right w3-gray w3-mobile">Contact</a></a>
+  <a href="#contact" class="w3-bar-item w3-button w3-right w3-gray w3-mobile">About</a></a>
+</div>
+<!-- Header -->
+
+
+<!-- Page content -->
+<div class="w3-content" style="max-width:1532px;">
+
+  <div class="w3-container w3-margin-top" id="rooms">
+    <h2>CHECK OUT</h2>
+  </div>
+  <br>
+  
+  <div class="w3-row-padding">
+    <div class="w3-col m3">
+      <label><i></i> Room Number</label>
+      <input class="w3-input w3-border" type="text" placeholder="Please save the information.">
+      <button class="w3-button w3-block w3-black w3-margin-bottom">Search</button>
     </div>
-  </nav>
-  <div id="mySidebar" class="sidebar">
-    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
-    <a href="#">Manage Employee</a>
-    <br />
-    <a href="#">Check-in</a>
-    <br />
-    <a href="../Check-out/UI_Checkout.html">Check-out</a>
-    <br />
-    <a href="../Booking/booking.php">Booking/Reserve</a>
-    <br />
-    <a href="../Booking/cancel.php">Cancel room</a>
-    <br />
-    <button class="dropdown-btn"> &nbsp;&nbsp;&nbsp;Room manage<i class="fa fa-caret-down"></i></button>
-    <div class="dropdown-container">
-      <a href="../Update/UI_UP_Basic.html">Basic</a>
-      <a href="../Update/UI_UP_Standard.html">Standard</a>
-      <a href="../Update/UI_UP_superior.html">Superior</a>
-      <a href="../Update/UI_UP_Deluxe.html">Deluxe</a>
-      <a href="../Update/UI_UP_Suite.html">Suite</a>
     </div>
   </div>
-  <!-- Content -->
-  <div class="container-fluid text-center">
-    <div class="row content">
 
+  <!-- Button trigger modal -->
+<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+  Launch static backdrop modal
+</button>
+
+<!-- Modal -->
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+  Launch demo modal
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        ...
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+  <!-- single room -->
+    
+    <!-- <div class="w3-center m-lg-7">
+      <button type="button" class="btn btn-success btn-lg ">Large button</button>
+    </div> -->
+
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br><br><br>
+<!-- Footer -->
+<footer class="w3-padding-35 w3-black w3-center w3-margin-top">
+  <h5>Follow Us On</h5>
+  <div class="w3-xlarge w3-padding-10">
+    <i class="fa fa-facebook-official w3-hover-opacity"></i>
+    <i class="fa fa-instagram w3-hover-opacity"></i>
+    <i class="fa fa-snapchat w3-hover-opacity"></i>
+    <i class="fa fa-pinterest-p w3-hover-opacity"></i>
+    <i class="fa fa-twitter w3-hover-opacity"></i>
+    <i class="fa fa-linkedin w3-hover-opacity"></i>
+  </div>
+  <p>Powered by <a href="" target="_blank" class="w3-hover-text-green"> Suphawat Sujai</a></p>
+</footer>
+
+<!--
+To use this code on your website, get a free API key from Google.
+Read more at: https://www.w3schools.com/graphics/google_maps_basic.asp
+-->
 
 </body>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
-<script src="../js/checkIn.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-<script>
-  function openNav() {
-    document.getElementById("mySidebar").style.width = "250px";
-    document.getElementById("main").style.marginLeft = "250px";
-  }
-  function closeNav() {
-    document.getElementById("mySidebar").style.width = "0";
-    document.getElementById("main").style.marginLeft = "0";
-  }
-</script>
-<script>
-  
-  var dropdown = document.getElementsByClassName("dropdown-btn");
-  var i;
-  for (i = 0; i < dropdown.length; i++) {
-    dropdown[i].addEventListener("click", function() {
-      this.classList.toggle("active");
-      var dropdownContent = this.nextElementSibling;
-      if (dropdownContent.style.display === "block") {
-        dropdownContent.style.display = "none";
-      } else {
-        dropdownContent.style.display = "block";
-      }
-    });
-  }
-</script>
 </html>
